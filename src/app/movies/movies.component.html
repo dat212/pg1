@@ -1,24 +1,37 @@
+
+  <div class="parent">
+      <ol class="heroes">
+        <li class="movieListItem" *ngFor="let movie of movies">
+            <a routerLink="/detail/{{movie.id}}">{{movie.name}}</a>
+        </li>
+      </ol>
+  </div>
+
+
+
+
+<div style="text-align:center">
+  <a routerLink="/adult">See smt gay</a>
+</div>
 <div class="form-group" [formGroup]="movie">
-    <div style="text-align:center">
-        <a routerLink="/adult">See smt gay</a>
+    <div class="add-movie">
+        <div>
+            <label for="emxample-movie-name" class="col-md-2 col-form-label" >Movie's Name : </label>
+            <div class="col-md-10">
+              <input class="form-control" type="text" formControlName="movieName" placeholder="Movie's Name">
+            </div>
         </div>
-  <label for="emxample-movie-name" class="col-md-2 col-form-label">Movie's Name : </label>
-  <div class="col-md-10">
-    <input class="form-control" type="text" formControlName="movieName">
-  </div>
-  <label for="emxample-movie-name" class="col-md-2 col-form-label">Movie's Id : </label>
-  <div class="col-md-10">
-    <input class="form-control" type="text" formControlName="movieId">
-  </div>
-  <button (click)="addMovie(movieId, movieName)">Add Movie</button>
-</div>
-<div class="list-movies">
-  <ul *ngFor="let movie of movies">
-    <li><a routerLink="/detail/{{movie.id}}">{{movie.name}}</a></li>
-  </ul>
-</div>
 
+        <div>
+            <label for="emxample-movie-name" class="col-md-2 col-form-label">Movie's Id : </label>
+            <div class="col-md-10">
+              <input class="form-control" type="text" formControlName="movieId" placeholder="Movie's Id">
+            </div>
+            <button type="menu">Add movie</button>
+        </div>
+    </div>
 
+  </div>
 
 
 
