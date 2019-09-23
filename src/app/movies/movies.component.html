@@ -1,0 +1,19 @@
+<div class="form-group" [formGroup]="movie">
+  <label for="emxample-movie-name" class="col-md-2 col-form-label">Movie's Name : </label>
+  <div class="col-md-10">
+    <input class="form-control" type="text" formControlName="movieName">
+  </div>
+  <label for="emxample-movie-name" class="col-md-2 col-form-label">Movie's Id : </label>
+  <div class="col-md-10">
+    <input class="form-control" type="text" formControlName="movieId">
+  </div>
+  <button (click)="addMovie(movieId, movieName)">Add Movie</button>
+</div>
+<div class="list-movies">
+  <ul *ngFor="let movie of movies">
+    <li><a routerLink="/detail/{{movie.id}}">{{movie.name}}</a></li>
+  </ul>
+</div>
+
+
+
