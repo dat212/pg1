@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MovieService } from '../movie.service';
 import { MOVIES } from '../listMovie';
 import { Movie } from '../movie';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class MoviesComponent implements OnInit {
   movie: FormGroup;
   movies: Movie[];
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService, private location: Location) { }
 
   ngOnInit() {
     this.movie = new FormGroup({
@@ -29,17 +30,12 @@ export class MoviesComponent implements OnInit {
 
   getMovie() {
     this.movies = this.movieService.getMovie();
+    console.log(this.movies);
   }
 
-  // addMovie(id, name) {
-  //   const newMovie: Movie = new Movie();
-  //   id = this.movie.value.id;
-  //   name = this.movie.value.name;
-  //   newMovie.id = id;
-  //   newMovie.name = name;
-  //   this.movieService.addMovie(newMovie);
-  // }
-
+  goBack() {
+    this.location.back();
+  }
 
 
 }

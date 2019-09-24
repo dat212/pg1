@@ -6,9 +6,6 @@
       <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
       <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
     </p>
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-    <h3><a routerLink="listMovie">List Movie</a></h3>
+
 
   </div>

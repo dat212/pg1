@@ -9,6 +9,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdultMovieComponent } from './adult-movie/adult-movie.component';
+import { AddComponent } from './add/add.component';
+import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,9 @@ import { AdultMovieComponent } from './adult-movie/adult-movie.component';
     MovieDetailComponent,
     LoginComponent,
     AdminComponent,
-    AdultMovieComponent
+    AdultMovieComponent,
+    AddComponent,
+    MenuComponent
 
   ],
   imports: [

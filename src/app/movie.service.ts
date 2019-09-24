@@ -12,7 +12,7 @@ export class MovieService {
 
   constructor(private route: ActivatedRoute) { }
 
-  addMovie(newMovie) {
+  addMovie(newMovie: Movie) {
     this.movies.push(newMovie);
   }
 
@@ -23,4 +23,5 @@ export class MovieService {
   getMovieById(id: number) {
     return this.movies[id];
   }
+
 }

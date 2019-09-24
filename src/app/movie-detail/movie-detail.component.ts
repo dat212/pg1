@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieDetailComponent implements OnInit {
   @Input() movie: Movie;
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute) { }
+  constructor(private movieService: MovieService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     // this.getMovieFromService(this.movie.id);
@@ -23,6 +24,10 @@ export class MovieDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.movie = this.movieService.getMovieById(id);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
