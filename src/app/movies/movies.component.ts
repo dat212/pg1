@@ -37,5 +37,9 @@ export class MoviesComponent implements OnInit {
     this.location.back();
   }
 
+  addToNav(newMovie: Movie) {
+    this.movieService.setBehaviorView(newMovie);
+  }
+
 
 }

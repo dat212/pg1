@@ -11,13 +11,18 @@ import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'listMovie', component: MoviesComponent },
-  { path: 'detail/:id', component: MovieDetailComponent },
-  { path: 'adult', component: AdultMovieComponent},
-  { path: 'add', component: AddComponent},
-  { path: 'menu', component: MenuComponent}
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'adult', component: AdultMovieComponent },
+  { path: 'menu', component: MenuComponent, children: [
+    {path: '', redirectTo: '/listMovie', pathMatch: 'full'},
+    {
+      path: 'listMovie', component: MoviesComponent, children: [
+        { path: 'detail/:id', component: MovieDetailComponent }
+      ]
+    },
+    { path: 'add', component: AddComponent }
+  ] },
 ];
 
 @NgModule({

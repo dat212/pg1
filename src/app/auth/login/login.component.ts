@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.message = 'Trying to log in ...';
     this.authService.login();
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu/listMovie']);
 
   }
 

@@ -2,7 +2,7 @@
   <div class="parent">
       <ol class="heroes">
         <li class="movieListItem" *ngFor="let movie of movies">
-            <a routerLink="/detail/{{movie.id}}">{{movie.name}}</a>
+            <a (click)="addToNav(movie)">{{movie.name}}</a>
         </li>
       </ol>
   </div>

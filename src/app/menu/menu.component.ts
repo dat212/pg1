@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private menuService: MovieService) { }
 
   ngOnInit() {
+    this.menuService.behave.subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
